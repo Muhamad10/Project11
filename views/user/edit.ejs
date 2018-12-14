@@ -1,0 +1,102 @@
+<!--
+including header content which is common for all pages
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Udemy</title>
+</head>
+<body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">Udemy</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ">
+                    <li class="nav-item active" style="margin-right:30px">
+                      <a class="nav-link" href="#">Categories <span class="sr-only">(current)</span></a>
+                    </li>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input style="width:350px" class="form-control mr-sm-2" type="search" placeholder="Search course" aria-label="Search">
+                        </form>
+                    <li class="nav-item " style="margin-left: 30px;">
+                      <a class="nav-link" href="#">Udemy For Business</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 30px;">
+                      <a class="nav-link" href="#">Become Instructor</a>
+                    </li>   
+                   
+                  </ul>
+                  <ul class="nav justify-content-end" style="margin-top:10px">
+                      <li class="nav-item">
+                      <button style="margin-right:20px" class="btn btn-dark my-2 my-sm-0" type="submit">Log in</button>
+                      </li>
+                      <li class="nav-item">
+                          <button class="btn btn-danger my-2 my-sm-0" type="submit">Sign Up</button>
+                          </li>
+                    </ul>
+                </div>
+              </nav>
+		
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<form action="/users/edit/<%= id %>" method="post" name="form1">
+<% if (messages.error) { %>
+                        <p style="color:red"><%- messages.error %></p>
+                    <% } %>
+                        <div class="container-fluid" style=" background-image: url('background.jpeg'); background-size: cover;
+                        min-height: 100%;
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        background-position: center;
+                        background-size: cover;
+                        filter: alpha(opacity=50)">
+	<div class="row" style=" background-color:rgba(0, 0, 0, 0.6);height:100%">
+                            
+			<div class="col-sm-6" style="margin-top:2%;padding-top:5%;padding-bottom:5%">
+			  <h1 style="color:white;text-align: center">Enquire About A Course</h1><br>
+			 
+			  <div class="form-group col-sm-6">
+			  <input type="text" class="form-control" placeholder="name" name="name" id="name" value="<%= name %>" />
+			  </div>
+
+			  <div class="form-group col-sm-6">
+			  <input type="text" name="age" class="form-control" placeholder="Age" value="<%= age %>" />
+			  </div>
+			
+			<div class="form-group col-sm-6">
+			
+			<input type="text" name="email" class="form-control" placeholder="Email" value="<%= email %>" />
+			</div>
+			<div class="form-group col-sm-12">
+				<input type="submit" class="Form-control" class="btn btn-sm btn-success" name="Submit" value="Edit" />
+			</div>
+			  
+			</div>
+			
+		  </div>
+	</table>
+	<input type="hidden" name="_method" value="PUT" />
+</form>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
